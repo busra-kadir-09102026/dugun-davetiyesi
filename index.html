@@ -3,36 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="theme-color" content="#f4efe8" />
   <meta name="description" content="Büşra & Kadir düğün davetiyesi" />
+
   <title>Büşra & Kadir | Düğün Davetiyesi</title>
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Ana stil dosyası -->
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
+
 <body>
-<audio id="weddingMusic" loop preload="metadata">
+
+  <!-- =========================================================
+       MÜZİK
+       MP3 dosyası index.html ile aynı klasörde bulunmalıdır.
+       Dosya adı: waltz-no2.mp3
+       ========================================================= -->
+
+  <audio id="weddingMusic" loop preload="metadata">
     <source src="waltz-no2.mp3" type="audio/mpeg">
     Tarayıcınız ses oynatmayı desteklemiyor.
   </audio>
 
-  <button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
+  <button
+    id="musicButton"
+    class="music-button"
+    type="button"
+    aria-label="Müziği başlat"
+  >
     <span class="music-icon">♪</span>
     <span id="musicLabel">Müziği Başlat</span>
   </button>
 
+
+  <!-- =========================================================
+       ANA KAPAK
+       ========================================================= -->
+
   <header class="hero" id="top">
+
     <div class="hero-noise"></div>
 
     <nav class="nav container">
-      <a href="#top" class="monogram">B & K</a>
-      <a href="#events" class="nav-link">Davet Detayları</a>
+
+      <a href="#top" class="monogram">
+        B & K
+      </a>
+
+      <a href="#events" class="nav-link">
+        Davet Detayları
+      </a>
+
     </nav>
 
+
     <div class="hero-content container reveal visible">
-      <p class="eyebrow">DÜĞÜN DAVETİYESİ</p>
+
+      <p class="eyebrow">
+        DÜĞÜN DAVETİYESİ
+      </p>
 
       <h1>
         <span>Büşra</span>
@@ -40,169 +79,469 @@
         <span>Kadir</span>
       </h1>
 
-      <div class="hero-rule"><span>✦</span></div>
 
-      <p class="hero-date">09 EKİM 2026 • CUMA • 19.30</p>
+      <div class="hero-rule">
+        <span>✦</span>
+      </div>
+
+
+      <p class="hero-date">
+        09 EKİM 2026 • CUMA • 19.00
+      </p>
+
 
       <p class="hero-copy">
         Siz sevdiklerimizi yanımızda görmek isteriz.<br>
         Düğünümüze davetlisiniz.
       </p>
 
-      <a class="button button-light" href="#events">Daveti Gör</a>
+
+      <a
+        class="button button-light"
+        href="#events"
+      >
+        Daveti Gör
+      </a>
+
     </div>
 
-    <a class="scroll-cue" href="#intro" aria-label="Aşağı kaydır">⌄</a>
+
+    <a
+      class="scroll-cue"
+      href="#intro"
+      aria-label="Aşağı kaydır"
+    >
+      ⌄
+    </a>
+
   </header>
 
+
   <main>
-    <section class="intro section" id="intro">
+
+    <!-- =========================================================
+         AİLELER
+         ========================================================= -->
+
+    <section
+      class="intro section"
+      id="intro"
+    >
+
       <div class="container narrow reveal">
-        <p class="eyebrow dark">SEVGİYLE</p>
-        <h2>En güzel günümüzde<br>yanımızda olun.</h2>
+
+        <p class="eyebrow dark">
+          SEVGİYLE
+        </p>
+
+        <h2>
+          En güzel günümüzde<br>
+          yanımızda olun.
+        </h2>
+
 
         <div class="families">
-          <div class="family">
-            <small>GELİN AİLESİ</small>
-            <strong>Keziban & Mehmet</strong>
-            <span>DOĞAN</span>
-          </div>
 
-          <div class="family-divider">✦</div>
+          <!-- Gelin ailesi -->
 
           <div class="family">
-            <small>DAMAT AİLESİ</small>
-            <strong>Leyla & Sevan</strong>
-            <span>BOZUMART</span>
+
+            <small>
+              GELİN AİLESİ
+            </small>
+
+            <strong>
+              Keziban & Mehmet
+            </strong>
+
+            <span>
+              DOĞAN
+            </span>
+
           </div>
+
+
+          <div class="family-divider">
+            ✦
+          </div>
+
+
+          <!-- Damat ailesi -->
+
+          <div class="family">
+
+            <small>
+              DAMAT AİLESİ
+            </small>
+
+            <strong>
+              Leyla & Seven
+            </strong>
+
+            <span>
+              BOZDUMAN
+            </span>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- =========================================================
+         GERİ SAYIM
+         ========================================================= -->
 
     <section class="countdown section">
-      <div class="container narrow reveal">
-        <p class="eyebrow dark">BÜYÜK GÜNE</p>
-        <h2>Geri Sayım</h2>
 
-        <div class="countdown-grid" aria-label="Düğüne kalan süre">
-          <div class="count-card"><span id="days">000</span><small>Gün</small></div>
-          <div class="count-card"><span id="hours">00</span><small>Saat</small></div>
-          <div class="count-card"><span id="minutes">00</span><small>Dakika</small></div>
-          <div class="count-card"><span id="seconds">00</span><small>Saniye</small></div>
+      <div class="container narrow reveal">
+
+        <p class="eyebrow dark">
+          BÜYÜK GÜNE
+        </p>
+
+        <h2>
+          Geri Sayım
+        </h2>
+
+
+        <div
+          class="countdown-grid"
+          aria-label="Düğüne kalan süre"
+        >
+
+          <div class="count-card">
+            <span id="days">000</span>
+            <small>Gün</small>
+          </div>
+
+          <div class="count-card">
+            <span id="hours">00</span>
+            <small>Saat</small>
+          </div>
+
+          <div class="count-card">
+            <span id="minutes">00</span>
+            <small>Dakika</small>
+          </div>
+
+          <div class="count-card">
+            <span id="seconds">00</span>
+            <small>Saniye</small>
+          </div>
+
         </div>
 
-        <p id="countdownMessage" class="countdown-message"></p>
+
+        <p
+          id="countdownMessage"
+          class="countdown-message"
+        ></p>
+
       </div>
+
     </section>
 
-    <section class="events section" id="events">
+
+    <!-- =========================================================
+         DAVET PROGRAMI
+         ========================================================= -->
+
+    <section
+      class="events section"
+      id="events"
+    >
+
       <div class="container">
+
         <div class="section-heading reveal">
-          <p class="eyebrow dark">DAVET PROGRAMI</p>
-          <h2>Birlikte kutlayalım.</h2>
+
+          <p class="eyebrow dark">
+            DAVET PROGRAMI
+          </p>
+
+          <h2>
+            Birlikte kutlayalım.
+          </h2>
+
         </div>
+
 
         <div class="event-grid">
+
+
+          <!-- ===================================================
+               KINA GECESİ
+               =================================================== -->
+
           <article class="event-card reveal">
+
             <div class="event-top">
-              <span class="event-index">01</span>
-              <span class="event-type">KINA GECESİ</span>
+
+              <span class="event-index">
+                01
+              </span>
+
+              <span class="event-type">
+                KINA GECESİ
+              </span>
+
             </div>
+
 
             <div class="event-date">
-              <strong>03</strong>
+
+              <strong>
+                03
+              </strong>
+
               <div>
-                <span>Ekim 2026</span>
-                <small>Cumartesi • 19.00</small>
+
+                <span>
+                  Ekim 2026
+                </span>
+
+                <small>
+                  Cumartesi • 19.00
+                </small>
+
               </div>
+
             </div>
 
+
             <div class="event-body">
-              <h3>Çamlıtepe Panorama</h3>
-              <p class="venue-sub">Düğün Salonu • Beyşehir / Konya</p>
+
+              <h3>
+                Çamlıtepe Panorama
+              </h3>
+
+              <p class="venue-sub">
+                Düğün Salonu • Beyşehir / Konya
+              </p>
+
 
               <div class="mini-event">
-                <span>Gelin Alma</span>
-                <strong>03 Ekim Cumartesi • 16.00</strong>
-                <small>Yeni Mah. 41331. Sok. No: 10/12, EK Apt., Beyşehir (Kız Evi)</small>
+
+                <span>
+                  Gelin Alma
+                </span>
+
+                <strong>
+                  03 Ekim Cumartesi • 16.00
+                </strong>
+
+                <small>
+                  Yeni Mah. 41331. Sok. No: 10/12,
+                  Efe Apt., Beyşehir (Kız Evi)
+                </small>
+
               </div>
+
             </div>
 
-            <a class="button button-dark full" href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x14daca223062698b:0xa3557d866aa4d68b?entry=s&amp;sa=X&amp;ved=2ahUKEwi_0JXo1eOWAxXH8bsIHQ3oAkgQ4kB6BAgaEAA&amp;hl=tr" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="button button-dark full"
+              href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x14daca223062698b:0xa3557d866aa4d68b?entry=s&amp;sa=X&amp;ved=2ahUKEwi_0JXo1eOWAxXH8bsIHQ3oAkgQ4kB6BAgaEAA&amp;hl=tr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Kına Konumunu Aç
             </a>
+
           </article>
+
+
+
+          <!-- ===================================================
+               DÜĞÜN
+               =================================================== -->
 
           <article class="event-card featured reveal">
+
             <div class="event-top">
-              <span class="event-index">02</span>
-              <span class="event-type">DÜĞÜN</span>
+
+              <span class="event-index">
+                02
+              </span>
+
+              <span class="event-type">
+                DÜĞÜN
+              </span>
+
             </div>
+
 
             <div class="event-date">
-              <strong>09</strong>
+
+              <strong>
+                09
+              </strong>
+
               <div>
-                <span>Ekim 2026</span>
-                <small>Cuma • 19.30</small>
+
+                <span>
+                  Ekim 2026
+                </span>
+
+                <small>
+                  Cuma • 19.00
+                </small>
+
               </div>
+
             </div>
+
 
             <div class="event-body">
-              <h3>Pera Garden</h3>
-              <p class="venue-sub">Düğün Salonu</p>
+
+              <h3>
+                Pera Garden
+              </h3>
+
+              <p class="venue-sub">
+                Düğün Salonu • Nizip / Gaziantep
+              </p>
+
 
               <div class="dinner-note">
-                <span>✦</span>
-                <p>Düğünümüz yemeklidir.</p>
+
+                <span>
+                  ✦
+                </span>
+
+                <p>
+                  Düğünümüz yemeklidir.
+                </p>
+
               </div>
+
             </div>
 
-            <a class="button button-light full" href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x15318f9d6ea55765:0x6b665e045be5de1a?entry=s&amp;sa=X&amp;ved=2ahUKEwjo6J_S1eOWAxWhif0HHT3yMHgQ4kB6BAgbEAA&amp;hl=tr" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="button button-light full"
+              href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x15318f9d6ea55765:0x6b665e045be5de1a?entry=s&amp;sa=X&amp;ved=2ahUKEwjo6J_S1eOWAxWhif0HHT3yMHgQ4kB6BAgbEAA&amp;hl=tr"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Düğün Konumunu Aç
             </a>
+
           </article>
+
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- =========================================================
+         DAVET SÖZÜ
+         ========================================================= -->
+
     <section class="quote section">
+
       <div class="container narrow reveal">
-        <span class="quote-symbol">“</span>
+
+        <span class="quote-symbol">
+          “
+        </span>
+
         <blockquote>
           Bir ömür boyu sürecek hikâyemizin
           en güzel gününde buluşalım.
         </blockquote>
-        <p>Büşra & Kadir</p>
+
+        <p>
+          Büşra & Kadir
+        </p>
+
       </div>
+
     </section>
 
-    <section class="music-section section" id="music">
+
+    <!-- =========================================================
+         MÜZİK BÖLÜMÜ
+         ========================================================= -->
+
+    <section
+      class="music-section section"
+      id="music"
+    >
+
       <div class="container narrow reveal">
-        <p class="eyebrow dark">DAVETİN MÜZİĞİ</p>
-        <h2>Waltz No. 2</h2>
+
+        <p class="eyebrow dark">
+          DAVETİN MÜZİĞİ
+        </p>
+
+        <h2>
+          Waltz No. 2
+        </h2>
+
+
         <p class="body-copy">
-          Davetiyeyi müzik eşliğinde görüntülemek için sağ alttaki
+          Davetiyeyi müzik eşliğinde görüntülemek için
           “Müziği Başlat” düğmesini kullanabilirsiniz.
         </p>
-        <button id="musicButtonLarge" class="button button-dark" type="button">
+
+
+        <button
+          id="musicButtonLarge"
+          class="button button-dark"
+          type="button"
+        >
           ♪ Müziği Başlat
         </button>
+
+
         <p class="music-note">
-          Telefon ve tarayıcılar sesli otomatik oynatmayı sınırlayabildiği için
-          müzik ilk dokunuşla başlar.
+          Telefon ve tarayıcılar sesli otomatik oynatmayı
+          sınırlayabildiği için müzik ilk dokunuşla başlar.
         </p>
+
       </div>
+
     </section>
+
   </main>
 
+
+
+  <!-- =========================================================
+       ALT BİLGİ
+       ========================================================= -->
+
   <footer>
+
     <div class="container">
-      <div class="footer-monogram">B & K</div>
-      <p>09 • 10 • 2026</p>
-      <small>Sizi aramızda görmekten mutluluk duyarız.</small>
+
+      <div class="footer-monogram">
+        B & K
+      </div>
+
+      <p>
+        09 • 10 • 2026
+      </p>
+
+      <small>
+        Sizi aramızda görmekten mutluluk duyarız.
+      </small>
+
     </div>
+
   </footer>
 
-  <script src="script.js?v=5"></script>
+
+  <!-- Ana JavaScript -->
+  <script src="script.js?v=6"></script>
+
 </body>
 </html>
