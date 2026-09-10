@@ -48,33 +48,34 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal:not(.visible)").forEach((el) => observer.observe(el));
 
-// Music controls
-const music = document.getElementById("weddingMusic");
+// YouTube music controls
 const musicButton = document.getElementById("musicButton");
 const musicButtonLarge = document.getElementById("musicButtonLarge");
+const musicCloseButton = document.getElementById("musicCloseButton");
+const musicPlayerCard = document.getElementById("musicPlayerCard");
+const youtubeMusicPlayer = document.getElementById("youtubeMusicPlayer");
 const musicLabel = document.getElementById("musicLabel");
 
-music.volume = 0.42;
+const youtubeMusicUrl =
+  "https://www.youtube-nocookie.com/embed/LPG_WUgHbis" +
+  "?autoplay=1&loop=1&playlist=LPG_WUgHbis&controls=1&rel=0";
 
-async function toggleMusic() {
-  if (music.paused) {
-    try {
-      await music.play();
-      document.body.classList.add("music-playing");
-      musicLabel.textContent = "Müziği Durdur";
-      musicButton.setAttribute("aria-label", "Müziği durdur");
-      musicButtonLarge.textContent = "❚❚ Müziği Durdur";
-    } catch (error) {
-      console.log("Tarayıcı sesli oynatmayı engelledi:", error);
-    }
-  } else {
-    music.pause();
-    document.body.classList.remove("music-playing");
-    musicLabel.textContent = "Müziği Başlat";
-    musicButton.setAttribute("aria-label", "Müziği başlat");
-    musicButtonLarge.textContent = "♪ Müziği Başlat";
-  }
+function openMusicPlayer() {
+  if (!youtubeMusicPlayer.src) youtubeMusicPlayer.src = youtubeMusicUrl;
+  musicPlayerCard.classList.add("open");
+  musicPlayerCard.setAttribute("aria-hidden", "false");
+  musicLabel.textContent = "Müzik Açık";
+  musicButtonLarge.textContent = "♪ Müzik Çalıyor";
 }
 
-musicButton.addEventListener("click", toggleMusic);
-musicButtonLarge.addEventListener("click", toggleMusic);
+function closeMusicPlayer() {
+  musicPlayerCard.classList.remove("open");
+  musicPlayerCard.setAttribute("aria-hidden", "true");
+  youtubeMusicPlayer.src = "";
+  musicLabel.textContent = "Müziği Başlat";
+  musicButtonLarge.textContent = "♪ Müziği Başlat";
+}
+
+musicButton.addEventListener("click", openMusicPlayer);
+musicButtonLarge.addEventListener("click", openMusicPlayer);
+musicCloseButton.addEventListener("click", closeMusicPlayer);

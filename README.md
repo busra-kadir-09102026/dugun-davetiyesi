@@ -50,3 +50,8 @@ Bir çift fotoğrafı kullanmak isterseniz `images` klasörüne:
 `kapak.jpg`
 
 adıyla ekleyin. Eklenmezse site mevcut sade yeşil tasarımla çalışmaya devam eder.
+
+
+## Waltz No. 2 sürümü
+
+Bu sürümde yerel MP3 kaldırıldı. Müzik YouTube'daki `Dmitri Shostakovich - Waltz No.2 (One hour version)` videosundan gömülü oynatıcıyla çağrılır. Video ID: `LPG_WUgHbis`. Bu nedenle GitHub'a ayrıca `music` klasörü yüklemeniz gerekmez.

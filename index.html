@@ -10,18 +10,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=4" />
 </head>
 <body>
-
-  <audio id="weddingMusic" loop preload="auto">
-    <source src="music/dugun-muzigi.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
+<button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
     <span class="music-icon">♪</span>
     <span id="musicLabel">Müziği Başlat</span>
   </button>
+
+  <div id="musicPlayerCard" class="music-player-card" aria-hidden="true">
+    <div class="music-player-head">
+      <div>
+        <strong>Dmitri Shostakovich</strong>
+        <span>Waltz No. 2</span>
+      </div>
+      <button id="musicCloseButton" class="music-close-button" type="button" aria-label="Müziği kapat">×</button>
+    </div>
+    <div class="youtube-wrap">
+      <iframe
+        id="youtubeMusicPlayer"
+        title="Dmitri Shostakovich - Waltz No. 2"
+        src=""
+        allow="autoplay; encrypted-media; picture-in-picture"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
 
   <header class="hero" id="top">
     <div class="hero-noise"></div>
@@ -176,17 +191,21 @@
       </div>
     </section>
 
-    <section class="music-section section">
+    <section class="music-section section" id="music">
       <div class="container narrow reveal">
-        <p class="eyebrow dark">BU DAVETİN BİR DE MÜZİĞİ VAR</p>
-        <h2>Biraz da müzik…</h2>
+        <p class="eyebrow dark">DAVETİN MÜZİĞİ</p>
+        <h2>Waltz No. 2</h2>
         <p class="body-copy">
-          Davetiyeyi müzik eşliğinde görüntülemek için aşağıdaki düğmeyi kullanabilirsiniz.
+          Dmitri Shostakovich'in Waltz No. 2 eserini dinlemek için sağ alttaki
+          “Müziği Başlat” düğmesini kullanabilirsiniz.
         </p>
         <button id="musicButtonLarge" class="button button-dark" type="button">
           ♪ Müziği Başlat
         </button>
-        <p class="music-note">Bazı telefon ve tarayıcılar sesli otomatik oynatmayı engellediği için müzik ilk dokunuşla başlar.</p>
+        <p class="music-note">
+          Müzik YouTube üzerinden oynatılır. Tarayıcılar sesli otomatik oynatmayı
+          sınırlayabildiği için ilk başlatma kullanıcı dokunuşuyla yapılır.
+        </p>
       </div>
     </section>
   </main>
@@ -199,6 +218,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
