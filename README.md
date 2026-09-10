@@ -1,94 +1,52 @@
-# Dijital Düğün Davetiyesi
+# Büşra & Kadir — Dijital Düğün Davetiyesi
 
-Bu proje GitHub Pages üzerinde ücretsiz yayımlanabilen, mobil uyumlu tek sayfalık bir dijital düğün davetiyesidir.
+Bu sürüm GitHub Pages için hazırlandı.
 
-## Dosyalar
+## Davet bilgileri
 
-- `index.html` — Sayfanın ana içeriği
-- `style.css` — Tasarım ve mobil uyumluluk
-- `script.js` — Geri sayım ve animasyonlar
-- `images/` — Fotoğraflar
+- **Büşra & Kadir**
+- **Kına:** 03 Ekim 2026 Cumartesi, 19.00
+- **Kına mekânı:** Çamlıtepe Panorama Düğün Salonu, Beyşehir / Konya
+- **Gelin alma:** 03 Ekim 2026 Cumartesi, 16.00
+- **Düğün:** 09 Ekim 2026 Cuma, 19.30
+- **Düğün mekânı:** Pera Garden
+- **Not:** Düğünümüz yemeklidir.
+- **Gelin ailesi:** Keziban & Mehmet DOĞAN
+- **Damat ailesi:** Leyla & Sevan BOZUMART
 
-## 1. İsim ve metinleri değiştirme
+## Konum bağlantıları
 
-`index.html` dosyasını açın ve aşağıdaki alanları kendi bilgilerinizle değiştirin:
+Kına:
+https://maps.google.com/maps/place//data=!4m2!3m1!1s0x14daca223062698b:0xa3557d866aa4d68b?entry=s&sa=X&ved=2ahUKEwi_0JXo1eOWAxXH8bsIHQ3oAkgQ4kB6BAgaEAA&hl=tr
 
-- Emre & Sümeyra
-- 20 Aralık 2026
-- Saat 19.00
-- Salon Adı
-- Açık adres
-- Davet metni
+Düğün:
+https://maps.google.com/maps/place//data=!4m2!3m1!1s0x15318f9d6ea55765:0x6b665e045be5de1a?entry=s&sa=X&ved=2ahUKEwjo6J_S1eOWAxWhif0HHT3yMHgQ4kB6BAgbEAA&hl=tr
 
-## 2. Düğün tarihini değiştirme
+## Müzik
 
-`script.js` içindeki şu satırı değiştirin:
+Siteye özgün, telifsiz bir enstrümantal fon müziği eklendi:
 
-```js
-const weddingDate = new Date("2026-12-20T19:00:00+03:00");
-```
+`music/dugun-muzigi.mp3`
 
-Türkiye saati için `+03:00` kısmını koruyabilirsiniz.
+Telefon tarayıcıları sesli otomatik oynatmayı çoğunlukla engellediği için müzik,
+ziyaretçinin `Müziği Başlat` düğmesine dokunmasıyla başlar.
 
-## 3. Fotoğraf ekleme
+Başka bir müzik kullanmak isterseniz kendi MP3 dosyanızı
+`music/dugun-muzigi.mp3` adıyla değiştirmeniz yeterlidir.
 
-`images` klasörüne şu adlarla fotoğraf koyun:
+## GitHub'daki mevcut siteyi güncelleme
 
-- `kapak.jpg`
-- `foto1.jpg`
-- `foto2.jpg`
-- `foto3.jpg`
+1. Repository'nizde **Code** sekmesine gidin.
+2. **Add file → Upload files** seçin.
+3. Bu paketteki `index.html`, `style.css`, `script.js` dosyalarını ve `music` klasörünü yükleyin.
+4. Aynı isimli eski dosyalar güncellenecektir.
+5. Sayfanın altındaki **Commit changes** düğmesine basın.
+6. GitHub Pages genellikle 1–3 dakika içinde yeni sürümü yayımlar.
 
-Kapak fotoğrafı mümkünse yatay ve yüksek çözünürlüklü olsun.
+## İsteğe bağlı kapak fotoğrafı
 
-## 4. Google Maps bağlantısı
+Bir çift fotoğrafı kullanmak isterseniz `images` klasörüne:
 
-`index.html` içinde şu bağlantıyı bulun:
+`kapak.jpg`
 
-```html
-href="https://maps.google.com/"
-```
-
-Bunu düğün salonunun Google Maps paylaşım bağlantısıyla değiştirin.
-
-## 5. RSVP / Katılım formu
-
-Google Forms üzerinden bir form oluşturun.
-
-Önerilen sorular:
-
-- Ad Soyad
-- Katılım durumu
-- Katılacak kişi sayısı
-- Not
-
-Formun paylaşım bağlantısını kopyalayın ve `index.html` içindeki:
-
-```html
-href="https://forms.google.com/"
-```
-
-alanıyla değiştirin.
-
-## 6. GitHub Pages ile yayımlama
-
-1. GitHub'da yeni bir repository oluşturun.
-2. Bu klasördeki tüm dosyaları repository'ye yükleyin.
-3. `Settings` → `Pages` bölümüne gidin.
-4. `Build and deployment` altında `Deploy from a branch` seçin.
-5. Branch olarak `main`, klasör olarak `/root` seçin.
-6. `Save` düğmesine basın.
-
-Bir süre sonra GitHub Pages bağlantınız hazır olacaktır.
-
-Örnek:
-
-`https://kullaniciadi.github.io/dugun-davetiye/`
-
-## Özel alan adı
-
-Daha sonra kendi domain'inizi de GitHub Pages'e bağlayabilirsiniz.
-
-Örneğin:
-
-`emrevesumeyra.com`
+adıyla ekleyin. Eklenmezse site mevcut sade yeşil tasarımla çalışmaya devam eder.

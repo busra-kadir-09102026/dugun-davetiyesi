@@ -1,70 +1,39 @@
-// ============================================
-// KOLAY DÜZENLEME ALANI
-// ============================================
+// Düğün tarihi: 09 Ekim 2026 Cuma, 19.30
+const weddingDate = new Date("2026-10-09T19:30:00+03:00");
 
-// Düğün tarihi ve saati.
-// Örnek: 20 Aralık 2026, saat 19:00
-const weddingDate = new Date("2026-12-20T19:00:00+03:00");
-
-// ============================================
-// GERİ SAYIM
-// ============================================
-
-const dayEl = document.getElementById("days");
-const hourEl = document.getElementById("hours");
-const minuteEl = document.getElementById("minutes");
-const secondEl = document.getElementById("seconds");
-const messageEl = document.getElementById("countdown-message");
+const daysEl = document.getElementById("days");
+const hoursEl = document.getElementById("hours");
+const minutesEl = document.getElementById("minutes");
+const secondsEl = document.getElementById("seconds");
+const countdownMessage = document.getElementById("countdownMessage");
 
 function updateCountdown() {
-  const now = new Date();
-  const distance = weddingDate.getTime() - now.getTime();
+  const diff = weddingDate.getTime() - Date.now();
 
-  if (distance <= 0) {
-    dayEl.textContent = "000";
-    hourEl.textContent = "00";
-    minuteEl.textContent = "00";
-    secondEl.textContent = "00";
-    messageEl.textContent = "Bugün bizim günümüz. 🤍";
+  if (diff <= 0) {
+    daysEl.textContent = "000";
+    hoursEl.textContent = "00";
+    minutesEl.textContent = "00";
+    secondsEl.textContent = "00";
+    countdownMessage.textContent = "Bugün bizim günümüz. 🤍";
     return;
   }
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+  const days = Math.floor(diff / 86400000);
+  const hours = Math.floor((diff / 3600000) % 24);
+  const minutes = Math.floor((diff / 60000) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
 
-  dayEl.textContent = String(days).padStart(3, "0");
-  hourEl.textContent = String(hours).padStart(2, "0");
-  minuteEl.textContent = String(minutes).padStart(2, "0");
-  secondEl.textContent = String(seconds).padStart(2, "0");
+  daysEl.textContent = String(days).padStart(3, "0");
+  hoursEl.textContent = String(hours).padStart(2, "0");
+  minutesEl.textContent = String(minutes).padStart(2, "0");
+  secondsEl.textContent = String(seconds).padStart(2, "0");
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ============================================
-// FOTOĞRAF KONTROLÜ
-// Fotoğraf dosyaları varsa placeholder gizlenir.
-// ============================================
-
-document.querySelectorAll(".photo").forEach((photo) => {
-  const bg = getComputedStyle(photo).backgroundImage;
-  const match = bg.match(/url\(["']?(.*?)["']?\)/);
-
-  if (!match) return;
-
-  const img = new Image();
-  img.onload = () => photo.classList.add("has-image");
-  img.src = match[1];
-});
-
-// ============================================
-// SCROLL ANİMASYONU
-// ============================================
-
-const revealElements = document.querySelectorAll(".reveal");
-
+// Scroll reveal
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -77,4 +46,35 @@ const observer = new IntersectionObserver(
   { threshold: 0.12 }
 );
 
-revealElements.forEach((element) => observer.observe(element));
+document.querySelectorAll(".reveal:not(.visible)").forEach((el) => observer.observe(el));
+
+// Music controls
+const music = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
+const musicButtonLarge = document.getElementById("musicButtonLarge");
+const musicLabel = document.getElementById("musicLabel");
+
+music.volume = 0.42;
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      document.body.classList.add("music-playing");
+      musicLabel.textContent = "Müziği Durdur";
+      musicButton.setAttribute("aria-label", "Müziği durdur");
+      musicButtonLarge.textContent = "❚❚ Müziği Durdur";
+    } catch (error) {
+      console.log("Tarayıcı sesli oynatmayı engelledi:", error);
+    }
+  } else {
+    music.pause();
+    document.body.classList.remove("music-playing");
+    musicLabel.textContent = "Müziği Başlat";
+    musicButton.setAttribute("aria-label", "Müziği başlat");
+    musicButtonLarge.textContent = "♪ Müziği Başlat";
+  }
+}
+
+musicButton.addEventListener("click", toggleMusic);
+musicButtonLarge.addEventListener("click", toggleMusic);

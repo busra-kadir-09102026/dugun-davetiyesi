@@ -3,211 +3,201 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#f5f1eb" />
-  <meta name="description" content="Emre & Sümeyra düğün davetiyesi" />
-  <title>Emre & Sümeyra | Düğün Davetiyesi</title>
+  <meta name="theme-color" content="#f4efe8" />
+  <meta name="description" content="Büşra & Kadir düğün davetiyesi" />
+  <title>Büşra & Kadir | Düğün Davetiyesi</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
 
-    <header class="hero section">
-      <div class="hero-overlay"></div>
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="music/dugun-muzigi.mp3" type="audio/mpeg">
+  </audio>
 
-      <nav class="nav container">
-        <a class="brand" href="#top">E & S</a>
-        <a class="nav-link" href="#details">Detaylar</a>
-      </nav>
+  <button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
+    <span class="music-icon">♪</span>
+    <span id="musicLabel">Müziği Başlat</span>
+  </button>
 
-      <div id="top" class="hero-content container">
-        <p class="eyebrow">DÜĞÜN DAVETİYESİ</p>
-        <h1>Emre <span>&</span> Sümeyra</h1>
-        <p class="hero-date">20 Aralık 2026 • Pazar</p>
+  <header class="hero" id="top">
+    <div class="hero-noise"></div>
 
-        <p class="hero-copy">
-          Birlikte çıktığımız bu yolculuğun en güzel gününde
-          sizleri de yanımızda görmekten mutluluk duyarız.
-        </p>
+    <nav class="nav container">
+      <a href="#top" class="monogram">B & K</a>
+      <a href="#events" class="nav-link">Davet Detayları</a>
+    </nav>
 
-        <a class="button button-light" href="#details">Daveti Gör</a>
+    <div class="hero-content container reveal visible">
+      <p class="eyebrow">DÜĞÜN DAVETİYESİ</p>
+
+      <h1>
+        <span>Büşra</span>
+        <em>&</em>
+        <span>Kadir</span>
+      </h1>
+
+      <div class="hero-rule"><span>✦</span></div>
+
+      <p class="hero-date">09 EKİM 2026 • CUMA • 19.30</p>
+
+      <p class="hero-copy">
+        Siz sevdiklerimizi yanımızda görmek isteriz.<br>
+        Düğünümüze davetlisiniz.
+      </p>
+
+      <a class="button button-light" href="#events">Daveti Gör</a>
+    </div>
+
+    <a class="scroll-cue" href="#intro" aria-label="Aşağı kaydır">⌄</a>
+  </header>
+
+  <main>
+    <section class="intro section" id="intro">
+      <div class="container narrow reveal">
+        <p class="eyebrow dark">SEVGİYLE</p>
+        <h2>En güzel günümüzde<br>yanımızda olun.</h2>
+
+        <div class="families">
+          <div class="family">
+            <small>GELİN AİLESİ</small>
+            <strong>Keziban & Mehmet</strong>
+            <span>DOĞAN</span>
+          </div>
+
+          <div class="family-divider">✦</div>
+
+          <div class="family">
+            <small>DAMAT AİLESİ</small>
+            <strong>Leyla & Sevan</strong>
+            <span>BOZUMART</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="scroll-indicator">↓</div>
-    </header>
+    <section class="countdown section">
+      <div class="container narrow reveal">
+        <p class="eyebrow dark">BÜYÜK GÜNE</p>
+        <h2>Geri Sayım</h2>
 
-    <main>
-      <section class="intro section">
-        <div class="container narrow reveal">
-          <p class="eyebrow dark">SEVGİYLE</p>
-          <h2>Bu özel günümüzde<br />yanımızda olun.</h2>
-          <div class="ornament">✦</div>
-          <p class="body-copy">
-            Hayatlarımızı birleştirdiğimiz bu anlamlı günde,
-            sevincimizi paylaşmanız ve en güzel anılarımıza
-            ortak olmanız bizim için çok değerli.
-          </p>
+        <div class="countdown-grid" aria-label="Düğüne kalan süre">
+          <div class="count-card"><span id="days">000</span><small>Gün</small></div>
+          <div class="count-card"><span id="hours">00</span><small>Saat</small></div>
+          <div class="count-card"><span id="minutes">00</span><small>Dakika</small></div>
+          <div class="count-card"><span id="seconds">00</span><small>Saniye</small></div>
         </div>
-      </section>
 
-      <section class="countdown section">
-        <div class="container reveal">
-          <p class="eyebrow dark">BÜYÜK GÜNE</p>
-          <h2>Geri Sayım</h2>
+        <p id="countdownMessage" class="countdown-message"></p>
+      </div>
+    </section>
 
-          <div class="countdown-grid" aria-label="Düğüne kalan süre">
-            <div class="count-card">
-              <span id="days">000</span>
-              <small>Gün</small>
-            </div>
-            <div class="count-card">
-              <span id="hours">00</span>
-              <small>Saat</small>
-            </div>
-            <div class="count-card">
-              <span id="minutes">00</span>
-              <small>Dakika</small>
-            </div>
-            <div class="count-card">
-              <span id="seconds">00</span>
-              <small>Saniye</small>
-            </div>
-          </div>
-
-          <p id="countdown-message" class="countdown-message"></p>
-        </div>
-      </section>
-
-      <section id="details" class="details section">
-        <div class="container reveal">
-          <p class="eyebrow dark">DAVET DETAYLARI</p>
-          <h2>Düğün Programı</h2>
-
-          <div class="details-grid">
-            <article class="detail-card">
-              <span class="detail-number">01</span>
-              <p class="detail-label">TARİH</p>
-              <h3>20 Aralık 2026</h3>
-              <p>Pazar</p>
-            </article>
-
-            <article class="detail-card">
-              <span class="detail-number">02</span>
-              <p class="detail-label">SAAT</p>
-              <h3>19.00</h3>
-              <p>Karşılama 18.30</p>
-            </article>
-
-            <article class="detail-card">
-              <span class="detail-number">03</span>
-              <p class="detail-label">MEKÂN</p>
-              <h3>Salon Adı</h3>
-              <p>Konya, Türkiye</p>
-            </article>
-          </div>
-
-          <div class="location-box">
-            <div>
-              <p class="eyebrow dark left">KONUM</p>
-              <h3>Salon Adı</h3>
-              <p>
-                Buraya açık adresi yazabilirsiniz.<br>
-                Konya, Türkiye
-              </p>
-            </div>
-
-            <a
-              class="button button-dark"
-              href="https://maps.google.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Yol Tarifi Al
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="quote section">
-        <div class="container narrow reveal">
-          <p class="quote-mark">“</p>
-          <blockquote>
-            Bir ömür boyu sürecek hikâyemizin
-            en güzel başlangıcında buluşalım.
-          </blockquote>
-          <p class="signature">Emre & Sümeyra</p>
-        </div>
-      </section>
-
-      <section class="gallery section">
-        <div class="container reveal">
-          <p class="eyebrow dark">BİZDEN</p>
-          <h2>Birlikte</h2>
-
-          <div class="gallery-grid">
-            <div class="photo photo-1">
-              <div class="photo-placeholder">
-                <span>Fotoğraf 1</span>
-                <small>images/foto1.jpg</small>
-              </div>
-            </div>
-            <div class="photo photo-2">
-              <div class="photo-placeholder">
-                <span>Fotoğraf 2</span>
-                <small>images/foto2.jpg</small>
-              </div>
-            </div>
-            <div class="photo photo-3">
-              <div class="photo-placeholder">
-                <span>Fotoğraf 3</span>
-                <small>images/foto3.jpg</small>
-              </div>
-            </div>
-          </div>
-
-          <p class="gallery-note">
-            Fotoğrafları eklediğinizde kartlar otomatik olarak görselleri kullanır.
-          </p>
-        </div>
-      </section>
-
-      <section class="rsvp section">
-        <div class="container narrow reveal">
-          <p class="eyebrow">KATILIM</p>
-          <h2>Aramızda olacak mısınız?</h2>
-          <p class="body-copy light-copy">
-            Katılım durumunuzu aşağıdaki butondan bildirebilirsiniz.
-          </p>
-
-          <a
-            class="button button-light"
-            href="https://forms.google.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Katılım Bildir
-          </a>
-
-          <p class="rsvp-note">
-            Bu butonu kendi Google Forms bağlantınızla değiştirin.
-          </p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
+    <section class="events section" id="events">
       <div class="container">
-        <p class="footer-monogram">E & S</p>
-        <p>20.12.2026</p>
-        <p class="footer-small">Sizi aramızda görmekten mutluluk duyarız.</p>
-      </div>
-    </footer>
+        <div class="section-heading reveal">
+          <p class="eyebrow dark">DAVET PROGRAMI</p>
+          <h2>Birlikte kutlayalım.</h2>
+        </div>
 
-  </div>
+        <div class="event-grid">
+          <article class="event-card reveal">
+            <div class="event-top">
+              <span class="event-index">01</span>
+              <span class="event-type">KINA GECESİ</span>
+            </div>
+
+            <div class="event-date">
+              <strong>03</strong>
+              <div>
+                <span>Ekim 2026</span>
+                <small>Cumartesi • 19.00</small>
+              </div>
+            </div>
+
+            <div class="event-body">
+              <h3>Çamlıtepe Panorama</h3>
+              <p class="venue-sub">Düğün Salonu • Beyşehir / Konya</p>
+
+              <div class="mini-event">
+                <span>Gelin Alma</span>
+                <strong>03 Ekim Cumartesi • 16.00</strong>
+                <small>Yeni Mah. 41331. Sok. No: 10/12, EK Apt., Beyşehir (Kız Evi)</small>
+              </div>
+            </div>
+
+            <a class="button button-dark full" href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x14daca223062698b:0xa3557d866aa4d68b?entry=s&amp;sa=X&amp;ved=2ahUKEwi_0JXo1eOWAxXH8bsIHQ3oAkgQ4kB6BAgaEAA&amp;hl=tr" target="_blank" rel="noopener noreferrer">
+              Kına Konumunu Aç
+            </a>
+          </article>
+
+          <article class="event-card featured reveal">
+            <div class="event-top">
+              <span class="event-index">02</span>
+              <span class="event-type">DÜĞÜN</span>
+            </div>
+
+            <div class="event-date">
+              <strong>09</strong>
+              <div>
+                <span>Ekim 2026</span>
+                <small>Cuma • 19.30</small>
+              </div>
+            </div>
+
+            <div class="event-body">
+              <h3>Pera Garden</h3>
+              <p class="venue-sub">Düğün Salonu</p>
+
+              <div class="dinner-note">
+                <span>✦</span>
+                <p>Düğünümüz yemeklidir.</p>
+              </div>
+            </div>
+
+            <a class="button button-light full" href="https://maps.google.com/maps/place//data=!4m2!3m1!1s0x15318f9d6ea55765:0x6b665e045be5de1a?entry=s&amp;sa=X&amp;ved=2ahUKEwjo6J_S1eOWAxWhif0HHT3yMHgQ4kB6BAgbEAA&amp;hl=tr" target="_blank" rel="noopener noreferrer">
+              Düğün Konumunu Aç
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote section">
+      <div class="container narrow reveal">
+        <span class="quote-symbol">“</span>
+        <blockquote>
+          Bir ömür boyu sürecek hikâyemizin
+          en güzel gününde buluşalım.
+        </blockquote>
+        <p>Büşra & Kadir</p>
+      </div>
+    </section>
+
+    <section class="music-section section">
+      <div class="container narrow reveal">
+        <p class="eyebrow dark">BU DAVETİN BİR DE MÜZİĞİ VAR</p>
+        <h2>Biraz da müzik…</h2>
+        <p class="body-copy">
+          Davetiyeyi müzik eşliğinde görüntülemek için aşağıdaki düğmeyi kullanabilirsiniz.
+        </p>
+        <button id="musicButtonLarge" class="button button-dark" type="button">
+          ♪ Müziği Başlat
+        </button>
+        <p class="music-note">Bazı telefon ve tarayıcılar sesli otomatik oynatmayı engellediği için müzik ilk dokunuşla başlar.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-monogram">B & K</div>
+      <p>09 • 10 • 2026</p>
+      <small>Sizi aramızda görmekten mutluluk duyarız.</small>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
