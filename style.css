@@ -764,3 +764,28 @@ footer small {
   justify-content: flex-end;
   min-height: 30px;
 }
+
+/* Büşra ve Kadir çapraz hizalama */
+.hero h1 span:first-of-type {
+  transform: translateX(-90px);
+}
+
+.hero h1 span:last-of-type {
+  transform: translateX(90px);
+}
+
+.hero h1 em {
+  transform: rotate(-12deg);
+}
+
+/* Mobil görünüm */
+@media (max-width: 780px) {
+  .hero h1 span:first-of-type {
+    transform: translateX(-40px);
+  }
+
+  .hero h1 span:last-of-type {
+    transform: translateX(40px);
+  }
+}
+
