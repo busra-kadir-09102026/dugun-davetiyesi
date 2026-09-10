@@ -749,19 +749,18 @@ footer small {
 }
 
 
-/* Kına Gecesi / Düğün başlıklarını büyüt */
 .event-type {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.20em;
+  line-height: 1.2;
 }
 
-/* 01 ve 02 numaralarını kaldır */
 .event-index {
   display: none;
 }
 
-/* Numara kalkınca başlığı sağ köşede tut */
 .event-top {
   justify-content: flex-end;
+  min-height: 30px;
 }
