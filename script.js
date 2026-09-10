@@ -1,5 +1,5 @@
 // Düğün tarihi: 09 Ekim 2026 Cuma, 19.30
-const weddingDate = new Date("2026-10-09T19:30:00+03:00");
+const weddingDate = new Date("2026-10-09T19:00:00+03:00");
 
 const daysEl = document.getElementById("days");
 const hoursEl = document.getElementById("hours");
