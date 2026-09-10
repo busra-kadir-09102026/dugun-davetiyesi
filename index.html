@@ -10,33 +10,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 <body>
-<button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
+<audio id="weddingMusic" loop preload="metadata">
+    <source src="music/waltz-no2.mp3" type="audio/mpeg">
+    Tarayıcınız ses oynatmayı desteklemiyor.
+  </audio>
+
+  <button id="musicButton" class="music-button" type="button" aria-label="Müziği başlat">
     <span class="music-icon">♪</span>
     <span id="musicLabel">Müziği Başlat</span>
   </button>
-
-  <div id="musicPlayerCard" class="music-player-card" aria-hidden="true">
-    <div class="music-player-head">
-      <div>
-        <strong>Dmitri Shostakovich</strong>
-        <span>Waltz No. 2</span>
-      </div>
-      <button id="musicCloseButton" class="music-close-button" type="button" aria-label="Müziği kapat">×</button>
-    </div>
-    <div class="youtube-wrap">
-      <iframe
-        id="youtubeMusicPlayer"
-        title="Dmitri Shostakovich - Waltz No. 2"
-        src=""
-        allow="autoplay; encrypted-media; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
 
   <header class="hero" id="top">
     <div class="hero-noise"></div>
@@ -196,15 +181,15 @@
         <p class="eyebrow dark">DAVETİN MÜZİĞİ</p>
         <h2>Waltz No. 2</h2>
         <p class="body-copy">
-          Dmitri Shostakovich'in Waltz No. 2 eserini dinlemek için sağ alttaki
+          Davetiyeyi müzik eşliğinde görüntülemek için sağ alttaki
           “Müziği Başlat” düğmesini kullanabilirsiniz.
         </p>
         <button id="musicButtonLarge" class="button button-dark" type="button">
           ♪ Müziği Başlat
         </button>
         <p class="music-note">
-          Müzik YouTube üzerinden oynatılır. Tarayıcılar sesli otomatik oynatmayı
-          sınırlayabildiği için ilk başlatma kullanıcı dokunuşuyla yapılır.
+          Telefon ve tarayıcılar sesli otomatik oynatmayı sınırlayabildiği için
+          müzik ilk dokunuşla başlar.
         </p>
       </div>
     </section>
@@ -218,6 +203,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=4"></script>
+  <script src="script.js?v=5"></script>
 </body>
 </html>

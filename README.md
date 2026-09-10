@@ -52,6 +52,22 @@ Bir çift fotoğrafı kullanmak isterseniz `images` klasörüne:
 adıyla ekleyin. Eklenmezse site mevcut sade yeşil tasarımla çalışmaya devam eder.
 
 
-## Waltz No. 2 sürümü
+## Yerel müzik sürümü
 
-Bu sürümde yerel MP3 kaldırıldı. Müzik YouTube'daki `Dmitri Shostakovich - Waltz No.2 (One hour version)` videosundan gömülü oynatıcıyla çağrılır. Video ID: `LPG_WUgHbis`. Bu nedenle GitHub'a ayrıca `music` klasörü yüklemeniz gerekmez.
+Bu son sürümde YouTube oynatıcısı tamamen kaldırılmıştır.
+
+Kullanılan dosya:
+
+`music/waltz-no2.mp3`
+
+Bu MP3, yüklenen `videoplayback.mp4` dosyasının ses kanalından oluşturulmuştur.
+GitHub'a `music` klasörünü de mutlaka yükleyin.
+
+GitHub'da güncellenecek içerik:
+
+- `index.html`
+- `style.css`
+- `script.js`
+- `music/waltz-no2.mp3`
+
+Yükleme ve commit işleminden sonra siteyi bir kez `Ctrl + Shift + R` ile yenileyin.

@@ -48,34 +48,42 @@ const observer = new IntersectionObserver(
 
 document.querySelectorAll(".reveal:not(.visible)").forEach((el) => observer.observe(el));
 
-// YouTube music controls
+// Yerel MP3 müzik kontrolleri
+const music = document.getElementById("weddingMusic");
 const musicButton = document.getElementById("musicButton");
 const musicButtonLarge = document.getElementById("musicButtonLarge");
-const musicCloseButton = document.getElementById("musicCloseButton");
-const musicPlayerCard = document.getElementById("musicPlayerCard");
-const youtubeMusicPlayer = document.getElementById("youtubeMusicPlayer");
 const musicLabel = document.getElementById("musicLabel");
 
-const youtubeMusicUrl =
-  "https://www.youtube-nocookie.com/embed/LPG_WUgHbis" +
-  "?autoplay=1&loop=1&playlist=LPG_WUgHbis&controls=1&rel=0";
+music.volume = 0.55;
 
-function openMusicPlayer() {
-  if (!youtubeMusicPlayer.src) youtubeMusicPlayer.src = youtubeMusicUrl;
-  musicPlayerCard.classList.add("open");
-  musicPlayerCard.setAttribute("aria-hidden", "false");
-  musicLabel.textContent = "Müzik Açık";
-  musicButtonLarge.textContent = "♪ Müzik Çalıyor";
+function syncMusicButtons(isPlaying) {
+  document.body.classList.toggle("music-playing", isPlaying);
+  musicLabel.textContent = isPlaying ? "Müziği Durdur" : "Müziği Başlat";
+  musicButton.setAttribute(
+    "aria-label",
+    isPlaying ? "Müziği durdur" : "Müziği başlat"
+  );
+  musicButtonLarge.textContent = isPlaying
+    ? "❚❚ Müziği Durdur"
+    : "♪ Müziği Başlat";
 }
 
-function closeMusicPlayer() {
-  musicPlayerCard.classList.remove("open");
-  musicPlayerCard.setAttribute("aria-hidden", "true");
-  youtubeMusicPlayer.src = "";
-  musicLabel.textContent = "Müziği Başlat";
-  musicButtonLarge.textContent = "♪ Müziği Başlat";
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      syncMusicButtons(true);
+    } catch (error) {
+      console.log("Tarayıcı müziği başlatamadı:", error);
+    }
+  } else {
+    music.pause();
+    syncMusicButtons(false);
+  }
 }
 
-musicButton.addEventListener("click", openMusicPlayer);
-musicButtonLarge.addEventListener("click", openMusicPlayer);
-musicCloseButton.addEventListener("click", closeMusicPlayer);
+musicButton.addEventListener("click", toggleMusic);
+musicButtonLarge.addEventListener("click", toggleMusic);
+
+music.addEventListener("play", () => syncMusicButtons(true));
+music.addEventListener("pause", () => syncMusicButtons(false));
