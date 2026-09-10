@@ -793,7 +793,7 @@ footer small {
 @media (max-width: 780px) {
   .hero-copy {
     white-space: nowrap;
-    font-size: clamp(17px, 4.8vw, 23px);
+    font-size: clamp(15px, 4.8vw, 23px);
     line-height: 1.4;
   }
 }
