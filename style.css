@@ -747,3 +747,21 @@ footer small {
 @media (max-width:780px) {
   .music-player-card { right:14px; bottom:72px; width:min(320px, calc(100vw - 28px)); }
 }
+
+
+/* Kına Gecesi / Düğün başlıklarını büyüt */
+.event-type {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+}
+
+/* 01 ve 02 numaralarını kaldır */
+.event-index {
+  display: none;
+}
+
+/* Numara kalkınca başlığı sağ köşede tut */
+.event-top {
+  justify-content: flex-end;
+}
