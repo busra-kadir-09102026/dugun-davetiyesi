@@ -797,3 +797,19 @@ footer small {
     line-height: 1.4;
   }
 }
+
+
+/* Pera Garden Kır Düğün Salonu başlığını her ekranda tek satırda tut */
+.event-card.featured .event-body h3 {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* Telefonlarda biraz daha küçült */
+@media (max-width: 780px) {
+  .event-card.featured .event-body h3 {
+    font-size: 24px;
+  }
+}
