@@ -836,3 +836,21 @@ footer small {
     letter-spacing: 0.12em;
   }
 }
+
+/* Aileler bölümündeki üst çizgiyi kısalt */
+.families {
+  position: relative;
+  border-top: none;
+  padding-top: 40px;
+}
+
+.families::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78%;
+  height: 1px;
+  background: var(--line);
+}
