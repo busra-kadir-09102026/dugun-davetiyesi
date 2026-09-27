@@ -807,19 +807,32 @@ footer small {
   font-weight: 700;
 }
 
+/* Davetiye butonu */
+.hero-cta {
+  font-family: "Inter", sans-serif;
+}
+
+.hero-cta .mobile-break {
+  font-weight: 800;
+}
+
 /* Mobil görünüm */
 @media (max-width: 780px) {
 
   .hero-cta {
-    min-height: 68px;
-    padding: 11px 30px;
+    min-height: 72px;
+    padding: 11px 28px;
     line-height: 1.35;
     flex-direction: column;
+    font-weight: 600;
   }
 
   .hero-cta .mobile-break {
     display: block;
     margin-top: 3px;
+
+    font-size: 13px;
     font-weight: 800;
+    letter-spacing: 0.12em;
   }
 }
